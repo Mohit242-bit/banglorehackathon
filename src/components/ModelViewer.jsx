@@ -295,8 +295,8 @@ const ModelInner = ({
     // ndc.y += yOff + cPar.current.y;
     // outer.current.position.copy(ndc.unproject(camera));
     
-    // FIX: Keep it exactly at origin (0,0,0) and just apply hover rotations
-    outer.current.position.set(0, 0, 0);
+    // FIX: Keep it exactly at origin (for rotation) but apply manual positional offsets
+    outer.current.position.set(xOff, yOff, 0);
 
     outer.current.rotation.x += cHov.current.x - phx;
     outer.current.rotation.y += cHov.current.y - phy;
@@ -340,7 +340,7 @@ const ModelViewer = ({
   modelXOffset = 0,
   modelYOffset = 0,
   defaultRotationX = 20,
-  defaultRotationY = -50,
+  defaultRotationY = -80,
   defaultZoom = 0.5,
   minZoomDistance = 0.5,
   maxZoomDistance = 10,

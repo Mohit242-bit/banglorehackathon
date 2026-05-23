@@ -66,8 +66,9 @@ function App() {
               ambientIntensity={0.8}
               keyLightIntensity={1}
               defaultRotationX={0}
-              defaultRotationY={0}
-              defaultZoom={0.6}
+              defaultRotationY={-90}
+              defaultZoom={0.35}
+              minZoomDistance={0.3}
               showScreenshotButton={false}
             />
           </div>

@@ -91,11 +91,10 @@ const ModelInner = ({
     g.updateWorldMatrix(true, true);
 
     const box = new THREE.Box3().setFromObject(content);
-    const center = box.getCenter(new THREE.Vector3());
     const sphere = box.getBoundingSphere(new THREE.Sphere());
     const s = 1 / (sphere.radius * 2);
 
-    content.position.copy(center).multiplyScalar(-1);
+    content.position.set(-sphere.center.x, -sphere.center.y, -sphere.center.z);
     g.position.set(0, 0, 0);
     g.scale.setScalar(s);
 
@@ -369,8 +368,8 @@ const ModelViewer = ({
   const sceneRef = useRef(null);
   const cameraRef = useRef(null);
 
-  const initYaw = deg2rad(defaultRotationX);
-  const initPitch = deg2rad(defaultRotationY);
+  const initPitch = deg2rad(defaultRotationX);
+  const initYaw = deg2rad(defaultRotationY);
   const camZ = Math.min(Math.max(defaultZoom, minZoomDistance), maxZoomDistance);
 
   const capture = () => {
@@ -447,8 +446,7 @@ const ModelViewer = ({
         <directionalLight position={[-5, 2, 5]} intensity={fillLightIntensity} />
         <directionalLight position={[0, 4, -5]} intensity={rimLightIntensity} />
 
-        <ContactShadows ref={contactRef} position={[0, -0.5, 0]} opacity={0.35} scale={10} blur={2} />
-
+        {/* Removed ContactShadows to avoid rendering glitches with large tight bounds */}
         <Suspense fallback={<Loader placeholderSrc={placeholderSrc} />}>
           <ModelInner
             url={url}

@@ -64,7 +64,7 @@ function App() {
               keyLightIntensity={1}
               defaultRotationX={0}
               defaultRotationY={0}
-              defaultZoom={3}
+              defaultZoom={1.2}
               showScreenshotButton={false}
             />
           </div>
@@ -154,7 +154,7 @@ function App() {
                 environmentPreset={anomalyStatus ? "sunset" : "studio"}
                 defaultRotationX={0}
                 defaultRotationY={0}
-                defaultZoom={3.5} 
+                defaultZoom={1.5} 
                 showScreenshotButton={true}
               />
             </div>

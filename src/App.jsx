@@ -62,7 +62,9 @@ function App() {
               environmentPreset="studio"
               ambientIntensity={0.8}
               keyLightIntensity={1}
-              defaultZoom={0.3}
+              defaultRotationX={0}
+              defaultRotationY={0}
+              defaultZoom={3}
               showScreenshotButton={false}
             />
           </div>
@@ -76,18 +78,18 @@ function App() {
       {currentView === 'dashboard' && (
         <div className="dashboard-container fade-enter">
           <div className="header">
-            <div style={{ width: '40px', height: '40px', marginRight: '15px' }}>
+            <div style={{ width: '80px', height: '80px', marginRight: '15px' }}>
               <ModelViewer
                 url="/simple_satellite_low_poly_free.glb"
-                width="40px"
-                height="40px"
+                width="80px"
+                height="80px"
                 autoRotate={true}
                 autoRotateSpeed={0.5}
                 enableManualZoom={false}
                 enableManualRotation={false}
                 enableMouseParallax={false}
                 environmentPreset="warehouse"
-                defaultZoom={6}
+                defaultZoom={1.5}
                 showScreenshotButton={false}
               />
             </div>
@@ -150,7 +152,9 @@ function App() {
                 enableManualRotation={true}
                 enableMouseParallax={true}
                 environmentPreset={anomalyStatus ? "sunset" : "studio"}
-                defaultZoom={0.5} 
+                defaultRotationX={0}
+                defaultRotationY={0}
+                defaultZoom={3.5} 
                 showScreenshotButton={true}
               />
             </div>

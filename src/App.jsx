@@ -58,18 +58,21 @@ function App() {
               url="/gun_satellite_panel_computer.glb"
               width="100vw"
               height="100vh"
+              modelXOffset={0.2}
+              modelYOffset={-0.12}
               autoRotate={false}
               autoRotateSpeed={0.3}
               enableManualZoom={false}
               enableManualRotation={false}
+              enableHoverRotation={false}
               enableMouseParallax={false}
               environmentPreset="studio"
               ambientIntensity={0.8}
               keyLightIntensity={1}
               defaultRotationX={0}
-              defaultRotationY={0}
-              defaultZoom={1.4}
-              minZoomDistance={0.5}
+              defaultRotationY={90}
+              defaultZoom={0.95}
+              minZoomDistance={0.8}
               showScreenshotButton={false}
             />
           </div>

@@ -27,7 +27,7 @@ function App() {
             url="/simple_satellite_low_poly_free.glb"
             width="100vw"
             height="100vh"
-            modelYOffset={0.2} /* Pushes the model upwards slightly */
+            modelYOffset={0.1} /* Pushes the model upwards slightly */
             autoRotate={true}
             autoRotateSpeed={0.5} 
             enableManualZoom={false}
@@ -68,8 +68,8 @@ function App() {
               keyLightIntensity={1}
               defaultRotationX={0}
               defaultRotationY={0}
-              defaultZoom={0.35}
-              minZoomDistance={0.3}
+              defaultZoom={1.4}
+              minZoomDistance={0.5}
               showScreenshotButton={false}
             />
           </div>
